@@ -1,0 +1,31 @@
+# Disable directory browsing and MultiViews
+Options -Indexes -MultiViews
+
+# Default page order
+DirectoryIndex index.php index.html
+
+# Force UTF-8 encoding
+AddDefaultCharset UTF-8
+
+# Force HTTPS for live sites, but allow HTTP on local dev port 8080
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{HTTPS} off
+    RewriteCond %{SERVER_PORT} !^8080$
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# Protect sensitive files (SQL and system files)
+<FilesMatch "\.(sql|log|ini|sh)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Allow smooth PHP running without .php extensions
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME}\.php -f
+    RewriteRule ^([^\.]+)$ $1.php [NC,L]
+</IfModule>

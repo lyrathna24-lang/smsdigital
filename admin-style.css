@@ -1,0 +1,150 @@
+/* =========================================================
+   កូដ CSS សម្រាប់ Login / Sign Up UI
+   ========================================================= */
+
+/* កន្លែងដាក់ប៊ូតុង Login នៅខាងស្តាំលើគេ */
+.top-auth-bar {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-bottom: -10px; /* ទាញវាឲ្យកៀកខាងលើ */
+    padding-bottom: 20px;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid #3b82f6;
+    color: #3b82f6;
+}
+.btn-outline:hover {
+    background: #3b82f6;
+    color: white;
+}
+
+.btn-gradient {
+    background: linear-gradient(135deg, #ec4899, #8b5cf6);
+    color: white;
+}
+
+/* ផ្ទាំង Popup សម្រាប់ Auth Modal */
+.auth-box {
+    background: #ffffff;
+    width: 100%;
+    max-width: 450px;
+    margin: auto;
+    border-radius: 25px;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+    overflow: hidden;
+    position: relative;
+    animation: zoomIn 0.3s ease-out forwards;
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.auth-header-bg {
+    background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+    padding: 30px 20px 20px;
+    text-align: center;
+    color: white;
+}
+
+.auth-header-bg h2 {
+    font-family: 'Moul', serif;
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.auth-header-bg p {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* Tab បិទបើក (Login / Register) */
+.auth-toggle {
+    display: flex;
+    background: #f1f5f9;
+    border-radius: 30px;
+    margin: 25px;
+    padding: 5px;
+    position: relative;
+}
+
+.auth-tab {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    font-weight: 700;
+    color: #64748b;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: all 0.3s;
+    z-index: 2;
+}
+
+.auth-tab.active {
+    background: #ffffff;
+    color: #3b82f6;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.auth-form {
+    padding: 0 25px 30px;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-group i {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: #94a3b8;
+    font-size: 18px;
+}
+
+.auth-input {
+    width: 100%;
+    padding: 15px 15px 15px 45px;
+    background: #f8fafc;
+    border: 2px solid #e2e8f0;
+    border-radius: 15px;
+    font-size: 15px;
+    outline: none;
+    transition: all 0.3s;
+}
+
+.auth-input:focus {
+    border-color: #3b82f6;
+    background: #ffffff;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+}
+
+.auth-options {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    margin-bottom: 25px;
+    color: #64748b;
+}
+
+.auth-options a {
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.auth-options a:hover {
+    text-decoration: underline;
+}
+
+.btn-auth-submit {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+}
